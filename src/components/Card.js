@@ -42,10 +42,35 @@ export default function SimpleCard({ user }) {
                 <Typography variant="body2" component="p">
                     email : {user.email}
                 </Typography>
-                <Typography variant="body2" component="p">
+                {/* <Typography variant="body2" component="p">
                     zip-code : {user.address.zipcode}
-                </Typography>
+                </Typography> */}
             </CardContent>
         </Card>
+
     );
 }
+
+// export default function SimpleCard({ user }) {
+//     const classes = useStyles();
+
+//     return (
+//         <Card_todo className={classes.root}>
+//             <CardContent>
+//                 <Typography className={classes.title} color="textSecondary" gutterBottom>
+//                     ID : {user.id}
+//                 </Typography>
+//                 <Typography variant="h5" component="h2">
+//                     Name : {user.name}
+//                 </Typography>
+//                 <Typography variant="body2" component="p">
+//                     email : {user_todo.email}
+//                 </Typography>
+//                 <Typography variant="body2" component="p">
+//                     body : {user_todo.body}
+//                 </Typography>
+//             </CardContent>
+//         </Card>
+
+//     );
+// }

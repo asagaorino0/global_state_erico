@@ -1,33 +1,33 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react'
+import { fetchGetTodoData } from '../apis/index'
+import { Store } from '../store/index'
+import { GET_TODO } from '../actions/index'
+import Card from '../components/Card'
 
 function SecondPage() {
+    const { globalState, setGlobalState } =
+        useContext(Store)
+    useEffect(() => {
+        fetchGetTodoData().then(res => {
+            setGlobalState({
+                type: GET_TODO,
+                data: res.data
+            })
+        })
+    }, [])
+    console.log(globalState)
     return (
-        <div>
-            <h1>SecondPage</h1>
-            <Link to="/">ホームへ移動</Link>
-        </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            {
+                globalState.user_todo.map((user, id) => {
+                    return (
+                        <Card user={user} key={id} />
+                    )
+                })
+            }
+
+        </div >
     )
 }
 
 export default SecondPage
-
-// import { useHistory } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
-
-// const ComponentC = () => {
-//     const history = useHistory()
-//     const backPage = () => {
-//         history.push("/componentb")
-//     }
-//     return (
-//         <>
-//             <div>ComponentB</div>
-//             <button onClick={backPage}>componentBへ戻る</button>
-//             <div>ComponentA</div>
-//             <Link to="/">ホームへ移動</Link>
-//         </>
-//     )
-// }
-
-// export default ComponentC
