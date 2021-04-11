@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
+import Card_todo from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
@@ -28,7 +28,7 @@ export default function SimpleCard({ user }) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
+        <Card_todo className={classes.root}>
             <CardContent>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
                     ID : {user.id}
@@ -36,16 +36,14 @@ export default function SimpleCard({ user }) {
                 <Typography variant="h5" component="h2">
                     Name : {user.name}
                 </Typography>
-                <Typography className={classes.pos} color="textSecondary">
-                    NickName : {user.username}
-                </Typography>
                 <Typography variant="body2" component="p">
                     email : {user.email}
                 </Typography>
                 <Typography variant="body2" component="p">
-                    zip-code : {user.address.zipcode}
+                    body : {user.body}
                 </Typography>
             </CardContent>
-        </Card>
+        </Card_todo>
+
     );
 }

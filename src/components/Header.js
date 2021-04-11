@@ -7,8 +7,8 @@ const Header = () => {
         <AppBar position="static">
             <Toolbar>
                 <h3>GlobalState</h3>
-                <Link to="SecondPage">TopSecond</Link>
-                <Link to="/">ホームへ移動</Link>
+                <Link to="SecondPage"><h3>TopSecond </h3></Link>
+                <Link to="/"><h3>GlobalState</h3></Link>
             </Toolbar>
         </AppBar>
 
