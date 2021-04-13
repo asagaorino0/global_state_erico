@@ -16,7 +16,6 @@ const reducer = (state, action) => {
             return { ...state, user_todo: action.data }
         default:
             return state
-
     }
 }
 

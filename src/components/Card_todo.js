@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card_todo from '@material-ui/core/Card';
+import Cardtodo from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
@@ -24,11 +24,11 @@ const useStyles = makeStyles({
     },
 });
 
-export default function SimpleCard({ user }) {
+export default function SmileCard({ user }) {
     const classes = useStyles();
 
     return (
-        <Card_todo className={classes.root}>
+        <Cardtodo className={classes.root}>
             <CardContent>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
                     ID : {user.id}
@@ -43,7 +43,7 @@ export default function SimpleCard({ user }) {
                     body : {user.body}
                 </Typography>
             </CardContent>
-        </Card_todo>
+        </Cardtodo>
 
     );
 }
