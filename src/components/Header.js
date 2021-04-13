@@ -11,7 +11,6 @@ const Header = () => {
                 <Link to="SecondPage"><h3>Second </h3></Link>
             </Toolbar>
         </AppBar>
-
     );
 }
 

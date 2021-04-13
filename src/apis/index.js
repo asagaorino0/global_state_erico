@@ -8,3 +8,7 @@ export const fetchGetData = async () => {
 export const fetchGetTodoData = async () => {
     return await API.get('/comments')
 }
+
+export const fetchGetTodoCheck = async () => {
+    return await API.get('/comments')
+}

@@ -30,6 +30,7 @@ export default function SmileCard({ user }) {
     return (
         <Cardtodo className={classes.root}>
             <CardContent>
+                <input type="checkbox" id={user.id} name={user.name}></input>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
                     ID : {user.id}
                 </Typography>
