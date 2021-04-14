@@ -1,6 +1,5 @@
-import { GET_DATA } from '../actions/index'
-import { GET_TODO } from '../actions/index'
-import { GET_CHECK1, GET_CHECK2 } from '../actions/index'
+import { GET_DATA, GET_TODO, GET_CHECK1, GET_CHECK2 } from '../actions/index'
+
 const reducer = (state, action) => {
     switch (action.type) {
         case GET_DATA:
@@ -26,7 +25,7 @@ const reducer = (state, action) => {
             console.log(action.data)
             const arr2 = action.data
             const arr2ByID = arr2.filter(function (data) {
-                return data.id % 2 == 0;
+                return data.id % 2 === 0;
             })
             console.log(arr2ByID)
             return { ...state, user_todo: arr2ByID };

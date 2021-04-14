@@ -1,10 +1,8 @@
 import React, { useEffect, useContext } from 'react'
-import { fetchGetTodoData } from '../apis/index'
+import { fetchGetTodoData, fetchGetTodoCheck } from '../apis/index'
 import { Store } from '../store/index'
-import { GET_TODO } from '../actions/index'
+import { GET_TODO, GET_CHECK1, GET_CHECK2 } from '../actions/index'
 import Cardtodo from '../components/Card_todo'
-import { GET_CHECK1, GET_CHECK2 } from '../actions/index'
-import { fetchGetTodoCheck } from '../apis/index'
 
 function SecondPage() {
     const { globalState, setGlobalState } =
@@ -18,7 +16,7 @@ function SecondPage() {
         })
     }, [])
 
-    const TodoCheck1 = () => {
+    const todoCheck1 = () => {
         // const { globalState, setGlobalState } = useContext(Store)
         // useEffect(() => {
         fetchGetTodoCheck().then(res => {
@@ -30,7 +28,7 @@ function SecondPage() {
         // } , [])
         console.log(globalState)
     }
-    const TodoCheck2 = () => {
+    const todoCheck2 = () => {
         fetchGetTodoCheck().then(res => {
             setGlobalState({
                 type: GET_CHECK2,
@@ -39,7 +37,7 @@ function SecondPage() {
         })
         console.log(globalState)
     }
-    const TodoCheck0 = () => {
+    const todoCheck0 = () => {
         fetchGetTodoCheck().then(res => {
             setGlobalState({
                 type: GET_TODO,
@@ -53,17 +51,17 @@ function SecondPage() {
     return (
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             <div>
-                <button onClick={TodoCheck1} >
+                <button onClick={todoCheck1} >
                     奇数だけ表示!!!
                 </button>
             </div>
             <div>
-                <button onClick={TodoCheck2}>
+                <button onClick={todoCheck2}>
                     偶数だけ表示!!!
                 </button>
             </div>
             <div>
-                <button onClick={TodoCheck0}>
+                <button onClick={todoCheck0}>
                     全部表示!!!!!!!
                 </button>
             </div>

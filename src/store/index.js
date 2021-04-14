@@ -2,7 +2,7 @@ import React, { useReducer, createContext } from 'react'
 import reducer from '../reducers/index'
 const initialState = {
     user_data: [],
-    user_todo: []
+    user_todo: [],
 }
 
 export const Store = createContext({
